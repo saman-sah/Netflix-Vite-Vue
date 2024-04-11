@@ -7,6 +7,7 @@ import movies from './movies.json'
 import SideNav from './components/SideNav.vue'
 import MovieDetails from './components/MovieDetails.vue'
 import VideoCarousel from './components/VideoCarousel.vue'
+import ChevronLeft from 'vue-material-design-icons/ChevronLeft.vue'
 const useMovie = useMovieStore()
 
 onMounted(() => {
@@ -44,8 +45,20 @@ onMounted(() => {
         <VideoCarousel class="pb-14" category="Horror Movies" :movies="movies[1]" />
         <VideoCarousel class="pb-32" category="Featured Movies" :movies="movies[2]" />
       </div>
+      <div v-if="!useMovie.showFullVideo" class="absolute z-20 h-[70%] left-[120px] w-[100%] right-0 bottom-0 bg-gradient-to-t from-black via-black" />
     </div>
-    <div class="absolute z-20 h-[70%] left-[120px] w-[100%] right-0 bottom-0 bg-gradient-to-t from-black via-black" />
+    <div v-if="useMovie.showFullVideo">
+      <div @click="useMovie.showFullVideo = false" class="absolute z-50 p-2 m-4 bg-white bg-opacity-50 rounded-full cursor-pointer">
+        <ChevronLeft fillColor="#FFFFFF" :size="40"/>
+      </div>
+      <video 
+        :src="'/videos/'+useMovie.movie.name+'.mp4'" 
+        autoplay 
+        loop
+        controls
+        class="absolute z-0 w-[100vw] h-full object-fit"
+      />
+    </div>
   </div>
 </template>
 

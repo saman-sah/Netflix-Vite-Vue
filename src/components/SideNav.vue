@@ -5,7 +5,6 @@ import Plus from 'vue-material-design-icons/Plus.vue'
 import Magnify from 'vue-material-design-icons/Magnify.vue'
 import Television from 'vue-material-design-icons/Television.vue'
 import TrendingUp from 'vue-material-design-icons/TrendingUp.vue'
-// import ChevronLeft from 'vue-material-design-icons/ChevronLeft.vue'
 import HomeOutline from 'vue-material-design-icons/HomeOutline.vue'
 import MovieOutline from 'vue-material-design-icons/MovieOutline.vue'
 </script>
