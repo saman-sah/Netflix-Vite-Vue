@@ -1,4 +1,6 @@
 <script setup>
+import NetflixLogo from '/images/netflix-logo.png' 
+
 import Plus from 'vue-material-design-icons/Plus.vue'
 import Magnify from 'vue-material-design-icons/Magnify.vue'
 import Television from 'vue-material-design-icons/Television.vue'
@@ -10,7 +12,11 @@ import MovieOutline from 'vue-material-design-icons/MovieOutline.vue'
 
 <template>
   <div>
-    Image
+    <img 
+      :src="NetflixLogo" 
+      alt="NetflixLogo"
+      class="absolute top-0 w-[35px] mt-10 ml-10"
+    >
     <div>
       <div class="py-2 mx-10 my-6">
         <Magnify
